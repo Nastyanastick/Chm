@@ -68,15 +68,15 @@ with open("input.txt", "r") as file_input:
                 c = A[i + 1][i]
                 d = A[i + 1][i + 1]
 
-                coef_b = a + d
+                coef_b = -a - d
                 coef_c = a * d - b * c
                 D = coef_b * coef_b - 4 * coef_c
 
                 if D >= 0:
-                    values.append((coef_b + math.sqrt(D)) / 2)
-                    values.append((coef_b - math.sqrt(D)) / 2)
+                    values.append((-coef_b + math.sqrt(D)) / 2)
+                    values.append((-coef_b - math.sqrt(D)) / 2)
                 else:
-                    real = coef_b / 2
+                    real = -coef_b / 2
                     imag = math.sqrt(-D) / 2
 
                     values.append(complex(real, imag))
